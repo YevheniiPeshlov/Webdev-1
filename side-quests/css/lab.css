@@ -1,0 +1,354 @@
+/*
+Source: OpenAI ChatGPT , project development chats, November 2026.
+Assistance included generated and revised HTML/CSS, layout debugging and cleanup.
+The notes below describe selected tasks, not the full extent of that assistance.
+Request summaries are paraphrases of project tasks, not verbatim prompts.
+*/
+.lab-main {
+    background-color: #fff5e7;
+}
+
+.lab-hero,
+.lab-gifts,
+.lab-printing,
+.lab-posters {
+    display: flex;
+    align-items: center;
+    padding: 48px 64px;
+}
+
+.lab-hero {
+    gap: 32px;
+    background-color: #1235ff;
+    color: #fff5e7;
+}
+
+.lab-intro {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+}
+
+.lab-eyebrow {
+    font-family: "Courier New", monospace;
+    font-weight: bold;
+}
+
+.lab-title {
+    margin: 0;
+    font-family: Impact, "Arial Narrow", sans-serif;
+    font-size: 120px;
+    font-style: italic;
+    line-height: 1;
+}
+
+.lab-crown {
+    position: absolute;
+    width: 100px;
+    top: -35px;
+    left: 230px;
+}
+
+.lab-subtitle {
+    padding: 24px 20px;
+    background-image: url("../images/shared/highlight-strip.svg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    color: #111111;
+    font-family: Impact, "Arial Narrow", sans-serif;
+    font-size: 32px;
+    font-style: italic;
+}
+
+.lab-summary {
+    max-width: 550px;
+    font-family: "Courier New", monospace;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.lab-photo,
+.lab-dragon,
+.lab-poster,
+.lab-visor-mark {
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+}
+
+.lab-photo {
+    background-image: url("../images/lab/intro-shapes.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.lab-portrait {
+    display: block;
+    width: 100%;
+    max-width: 560px;
+    margin: 0 auto;
+}
+
+.lab-photo figcaption,
+.lab-printing figcaption {
+    font-family: "Courier New", monospace;
+    font-size: 14px;
+}
+
+.lab-gifts {
+    gap: 24px;
+}
+
+.lab-section-intro {
+    flex: 0 0 210px;
+}
+
+.lab-section-number {
+    display: inline-block;
+    margin: 0 0 12px;
+    padding: 6px 12px;
+    background-color: #ff6b08;
+    font-family: "Courier New", monospace;
+    font-weight: bold;
+}
+
+.lab-section-title {
+    margin: 0 0 16px;
+    font-family: Impact, "Arial Narrow", sans-serif;
+    font-size: 44px;
+    font-style: italic;
+    line-height: 1.1;
+}
+
+.lab-section-title span {
+    background-color: #dfff00;
+}
+
+.lab-section-intro p {
+    font-family: "Courier New", monospace;
+    line-height: 1.4;
+}
+
+/*
+ChatGPT-assisted layering and spacing.
+Request summary: enlarge the coloured blobs behind the photo-to-figurine pairs
+and bring each arrow closer to its figurine.
+Applied solution: each relative pair forms a local z-index group. The absolute blob
+is 120% wide and 125% high; figures and arrows use a higher layer.
+Flex sizing and the fixed arrow width control the space between the images.
+*/
+.gift-pair {
+    position: relative;
+    z-index: 0;
+    display: flex;
+    flex: 1;
+    min-width: 0;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 10px;
+}
+
+.gift-blob {
+    position: absolute;
+    z-index: 0;
+    width: 120%;
+    height: 125%;
+    top: -12.5%;
+    left: -10%;
+}
+
+.gift-pair figure {
+    position: relative;
+    z-index: 1;
+    flex: 0 1 195px;
+    min-width: 0;
+    margin: 0;
+}
+
+.gift-pair figure img {
+    display: block;
+    width: 100%;
+    height: 260px;
+    object-fit: contain;
+}
+
+.gift-pair figcaption {
+    font-family: "Courier New", monospace;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.gift-arrow {
+    position: relative;
+    z-index: 1;
+    width: 40px;
+    flex-shrink: 0;
+}
+
+.gift-reference {
+    background-color: #fff5e7;
+    border: 6px solid #ffffff;
+    transform: rotate(-4deg);
+}
+
+/*
+ChatGPT-assisted torn-paper background.
+Request summary: reproduce the torn section background from the chosen reference.
+Applied solution: printing-paper.svg supplies the uneven edge and grain texture.
+It is stretched across this section without repeating; the VISOR section below
+uses the related shared/paper-black.svg background.
+*/
+.lab-printing {
+    gap: 32px;
+    background-image: url("../images/lab/printing-paper.svg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.lab-printing .lab-section-title span {
+    background-color: #fff5e7;
+}
+
+.lab-sign {
+    flex: 1.3;
+    min-width: 0;
+    margin: 0;
+    padding-left: 24px;
+    border-left: 1px solid #111111;
+}
+
+.lab-dragon img {
+    display: block;
+    width: 100%;
+    height: 340px;
+    object-fit: contain;
+}
+
+.lab-sign img {
+    display: block;
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+}
+
+.lab-posters {
+    gap: 40px;
+}
+
+.lab-section-underline {
+    display: block;
+    width: 160px;
+    margin-top: 12px;
+}
+
+.lab-poster img {
+    display: block;
+    width: 100%;
+    max-width: 340px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    border: 8px solid #ffffff;
+    box-shadow: 4px 4px 0 rgba(17, 17, 17, 0.12);
+}
+
+.lab-poster figcaption {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.lab-visor {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+    padding: 52px 64px;
+    background-image: url("../images/shared/paper-black.svg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    color: #fff5e7;
+}
+
+.lab-visor .lab-section-number {
+    color: #111111;
+}
+
+.lab-visor .lab-section-title,
+.lab-visor-name {
+    color: #dfff00;
+    font-size: 64px;
+}
+
+.lab-visor .lab-section-intro {
+    flex: 1;
+    min-width: 0;
+}
+
+/*
+ChatGPT-assisted logo crop and blending.
+Request summary: show the VISOR eyes prominently in the centre of the dark section.
+Applied solution: overflow hides the rest of the enlarged source image.
+Absolute positioning and tuned translate offsets select the visible crop.
+Mix-blend-mode: screen blends the black image background into the paper,
+while the white eyes remain visible. The source image was not cropped on disk.
+*/
+.lab-visor-window {
+    position: relative;
+    height: 180px;
+    overflow: hidden;
+}
+
+.lab-visor-window img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 195%;
+    transform: translate(-47.5%, -48%);
+    mix-blend-mode: screen;
+}
+
+.lab-visor-mark figcaption {
+    font-family: "Courier New", monospace;
+    font-size: 12px;
+}
+
+.lab-visor-copy {
+    flex: 1;
+    min-width: 0;
+    padding: 46px 0 0;
+    text-align: right;
+}
+
+.lab-visor-copy .lab-section-underline {
+    margin: 12px 0 0 auto;
+}
+
+.lab-visor-name {
+    margin: 0;
+    font-family: Impact, "Arial Narrow", sans-serif;
+    font-style: italic;
+    line-height: 1.1;
+}
+
+.lab-visor-tagline {
+    margin: 10px 0 0;
+    font-family: "Courier New", monospace;
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.lab-main figure {
+    text-align: center;
+}
+
+.lab-main figcaption {
+    display: inline-block;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 12px 0 0;
+    padding: 8px 16px;
+    background-color: #111111;
+    color: #fff5e7;
+    border-radius: 12px;
+    transform: rotate(-3deg);
+}

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+  <defs>
+    <path id="spark-shape" d="M43.88 33.05 Q46.39 34.69 46.75 31.71 L49.61 8.05 Q50.04 4.48 53.63 4.79 L62.39 5.56 Q65.98 5.87 65.78 9.47 L64.49 33.26 Q64.32 36.26 67.08 35.08 L89.00 25.72 Q92.31 24.31 93.83 27.57 L97.55 35.55 Q99.07 38.81 95.86 40.44 L74.61 51.21 Q71.93 52.57 74.33 54.37 L93.39 68.67 Q96.27 70.83 94.20 73.78 L89.16 80.99 Q87.09 83.94 84.08 81.97 L64.12 68.95 Q61.61 67.31 61.25 70.29 L58.39 93.95 Q57.96 97.52 54.37 97.21 L45.61 96.44 Q42.02 96.13 42.22 92.53 L43.51 68.74 Q43.68 65.74 40.92 66.92 L19.00 76.28 Q15.69 77.69 14.17 74.43 L10.45 66.45 Q8.93 63.19 12.14 61.56 L33.39 50.79 Q36.07 49.43 33.67 47.63 L14.61 33.33 Q11.73 31.17 13.80 28.22 L18.84 21.01 Q20.91 18.06 23.92 20.03 L43.88 33.05 Z"/>
+    <linearGradient id="spark-face" x1="18" y1="7" x2="91" y2="100" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#faffb8"/>
+      <stop offset="0.24" stop-color="#f0ff54"/>
+      <stop offset="0.54" stop-color="#dfff00"/>
+      <stop offset="0.82" stop-color="#c5e400"/>
+      <stop offset="1" stop-color="#99bd00"/>
+    </linearGradient>
+    <linearGradient id="spark-depth" x1="43" y1="38" x2="83" y2="111" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#9bb815"/>
+      <stop offset="0.6" stop-color="#668300"/>
+      <stop offset="1" stop-color="#2c4914"/>
+    </linearGradient>
+    <linearGradient id="spark-sheen" x1="32" y1="13" x2="64" y2="73" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="spark-clip"><use href="#spark-shape"/></clipPath>
+    <filter id="spark-shadow" x="-25%" y="-25%" width="160%" height="170%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="1" dy="5" stdDeviation="2.3" flood-color="#030a01" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+  <g filter="url(#spark-shadow)">
+    <use href="#spark-shape" transform="translate(5 7)" fill="url(#spark-depth)" stroke="#1d3010" stroke-width="2" stroke-linejoin="round"/>
+    <use href="#spark-shape" transform="translate(3.5 5)" fill="url(#spark-depth)"/>
+    <use href="#spark-shape" transform="translate(2 3)" fill="url(#spark-depth)"/>
+    <use href="#spark-shape" fill="url(#spark-face)" stroke="#7b950b" stroke-width="1.4" stroke-linejoin="round"/>
+    <g clip-path="url(#spark-clip)">
+      <path d="M3 8 L88 0 L110 31 Q63 36 22 88 Z" fill="url(#spark-sheen)"/>
+      <use href="#spark-shape" transform="translate(-1.1 -1.4)" fill="none" stroke="#fcffd7" stroke-opacity="0.85" stroke-width="2"/>
+    </g>
+  </g>
+</svg>

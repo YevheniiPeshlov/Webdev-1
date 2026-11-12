@@ -1,0 +1,262 @@
+/*
+Source: OpenAI ChatGPT , project development chats, November 2026.
+Assistance included generated and revised HTML/CSS, layout debugging and cleanup.
+The notes below describe selected tasks, not the full extent of that assistance.
+Request summaries are paraphrases of project tasks, not verbatim prompts.
+*/
+.story-hero {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    padding: 40px 64px 0;
+    overflow: hidden;
+}
+
+.story-intro {
+    position: relative;
+    flex: 1;
+    padding: 24px 0 48px;
+}
+
+.story-eyebrow {
+    margin: 0 0 18px;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.story-title {
+    margin: 0;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-size: 128px;
+    font-weight: 900;
+    font-style: italic;
+    line-height: 0.9;
+}
+
+.story-title span {
+    display: block;
+}
+
+.story-crown {
+    position: absolute;
+    top: 0;
+    left: 285px;
+    width: 110px;
+}
+
+/*
+ChatGPT-assisted effect.
+Request summary: make the subtitle look like an uneven paper label.
+Applied solution: a polygon clips its outline and a small rotation tilts the label.
+*/
+.story-subtitle {
+    display: inline-block;
+    margin: 22px 0 0;
+    padding: 10px 20px;
+    background-color: #dfff00;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-size: 34px;
+    font-style: italic;
+    line-height: 1;
+    transform: rotate(-2deg);
+    clip-path: polygon(3% 0, 97% 3%, 100% 28%, 97% 100%, 2% 96%, 0 68%);
+}
+
+.story-summary {
+    max-width: 500px;
+    margin: 26px 0 0;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/*
+ChatGPT-assisted image positioning.
+Request summary: fit the portrait over the orange shape without changing the source image.
+Applied solution: the container clips overflow and the absolute portrait is enlarged
+and moved using the size and offsets below.
+*/
+.story-photo {
+    position: relative;
+    flex: 1;
+    height: 540px;
+    margin: 0;
+    overflow: hidden;
+    background-image: url("../images/shared/shape-orange.svg");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: contain;
+}
+
+.story-portrait {
+    position: absolute;
+    top: 4px;
+    left: 50px;
+    width: 650px;
+}
+
+.story-photo figcaption {
+    position: absolute;
+    bottom: 22px;
+    left: 24px;
+    z-index: 1;
+    padding: 7px 12px;
+    background-color: #111111;
+    color: #f5f0e8;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 14px;
+}
+
+/*
+ChatGPT-assisted torn-paper effect.
+Request summary: give the dark timeline section an uneven paper edge.
+Applied solution: a long clip-path polygon creates the jagged top edge,
+and a repeating SVG dot texture adds grain. The top margin overlaps the section above.
+*/
+.story-history {
+    position: relative;
+    margin-top: -12px;
+    padding: 52px 64px 56px;
+    background-color: #111111;
+    background-image: url("../images/shared/grain-dots.svg");
+    background-repeat: repeat;
+    background-size: 260px 260px;
+    clip-path: polygon(0 16px, 3% 8px, 6% 17px, 10% 9px, 14% 15px, 19% 7px, 24% 16px, 29% 10px, 34% 17px, 40% 8px, 46% 14px, 52% 7px, 58% 16px, 64% 9px, 70% 15px, 76% 8px, 82% 16px, 88% 10px, 94% 17px, 100% 9px, 100% 100%, 0 100%);
+}
+
+.story-history h2 {
+    margin: 0 0 28px;
+    color: #f5f0e8;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-size: 54px;
+    font-style: italic;
+    line-height: 1;
+}
+
+.story-table-frame {
+    padding: 10px;
+    border-radius: 22px;
+    background-color: #f5f0e8;
+}
+
+#life-timeline {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    color: #111111;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+#life-timeline caption {
+    padding: 10px 18px 18px;
+    text-align: left;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 14px;
+}
+
+#life-timeline th,
+#life-timeline td {
+    padding: 13px 18px;
+    border-bottom: 1px solid #d6cbbd;
+    text-align: left;
+    vertical-align: middle;
+}
+
+#life-timeline thead {
+    background-color: #ff6a34;
+}
+
+#life-timeline thead th {
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-size: 26px;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.story-age-column {
+    width: 14%;
+}
+
+.story-chapter-column {
+    width: 25%;
+}
+
+.story-event-column {
+    width: 61%;
+}
+
+#life-timeline tbody th {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+#life-timeline .story-age {
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-size: 30px;
+    font-style: italic;
+    line-height: 1.1;
+}
+
+#life-timeline tbody tr:nth-of-type(even) {
+    background-color: #fde8d3;
+}
+
+.story-age-university {
+    background-color: #fde8d3;
+}
+
+#life-timeline tbody tr:hover {
+    background-color: #efff97;
+}
+
+#life-timeline tfoot td {
+    padding: 15px 18px;
+    border-bottom: 0;
+    background-color: #dfff00;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.story-closing {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    padding: 48px 64px;
+}
+
+.story-quote {
+    flex: 1;
+    margin: 0;
+}
+
+.story-quote blockquote {
+    margin: 0;
+    padding: 24px 32px;
+    border-radius: 14px 24px 12px 20px;
+    background-color: #dfff00;
+    transform: rotate(-1deg);
+}
+
+.story-quote blockquote p {
+    margin: 0;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-size: 48px;
+    font-style: italic;
+    line-height: 1.15;
+}
+
+.story-quote figcaption {
+    margin-top: 18px;
+    text-align: right;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 16px;
+}
+
+.story-closing-star {
+    width: 80px;
+    height: 80px;
+}

@@ -1,0 +1,358 @@
+/*
+Source: OpenAI ChatGPT , project development chats, November 2026.
+Assistance included generated and revised HTML/CSS, layout debugging and cleanup.
+The notes below describe selected tasks, not the full extent of that assistance.
+Request summaries are paraphrases of project tasks, not verbatim prompts.
+*/
+.clock-main {
+    background-color: #fff5e7;
+}
+
+.clock-hero {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    padding: 48px 64px 56px;
+}
+
+.clock-intro {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+}
+
+.clock-eyebrow {
+    margin: 0 0 22px;
+    font-family: "Courier New", monospace;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.clock-title {
+    margin: 0;
+    font-family: Impact, "Arial Narrow", sans-serif;
+    font-size: 120px;
+    font-style: italic;
+    line-height: 0.9;
+}
+
+.clock-title span {
+    display: block;
+}
+
+.clock-crown {
+    position: absolute;
+    top: -5px;
+    left: 330px;
+    width: 100px;
+}
+
+.clock-subtitle {
+    display: inline-block;
+    margin: 24px 0 0;
+    padding: 12px 18px;
+    background-image: url("../images/shared/highlight-strip.svg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    font-family: Impact, "Arial Narrow", sans-serif;
+    font-size: 32px;
+    font-style: italic;
+}
+
+.clock-summary {
+    max-width: 520px;
+    margin: 22px 0;
+    font-family: "Courier New", monospace;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.clock-contents {
+    font-family: "Courier New", monospace;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.clock-contents p {
+    margin: 0;
+    font-weight: bold;
+}
+
+/*
+ChatGPT-assisted list styling.
+Request summary: make the ordered contents list match the website's collage style.
+Applied solution: decimal-leading-zero gives 01, 02 and 03; ::marker styles those numbers.
+The link rules below add rounded, rotated labels and a decorative ::after arrow.
+The actual navigation remains ordinary HTML links to section IDs.
+*/
+.clock-contents ol {
+    max-width: 440px;
+    margin: 14px 0 0;
+    padding-left: 38px;
+    list-style-type: decimal-leading-zero;
+}
+
+.clock-contents li {
+    margin: 10px 0;
+    padding-left: 8px;
+}
+
+.clock-contents li::marker {
+    color: #1235ff;
+    font-family: Impact, "Arial Narrow", sans-serif;
+    font-size: 26px;
+    font-style: italic;
+}
+
+.clock-contents a {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 2px solid #111111;
+    border-radius: 12px;
+    background-color: #dfff00;
+    box-shadow: 3px 3px 0 #111111;
+    font-family: Impact, "Arial Narrow", sans-serif;
+    font-size: 23px;
+    font-style: italic;
+    text-decoration: none;
+    transform: rotate(-1deg);
+}
+
+.clock-contents a::after {
+    content: " ↘";
+}
+
+.clock-contents a:link {
+    color: #111111;
+}
+
+.clock-contents a:visited {
+    color: #343d70;
+}
+
+.clock-contents a:hover {
+    background-color: #1235ff;
+    color: #fff5e7;
+    transform: rotate(0deg);
+}
+
+.clock-contents a:active {
+    background-color: #ff6b08;
+    color: #111111;
+    box-shadow: 1px 1px 0 #111111;
+}
+
+.clock-contents a:focus-visible {
+    outline: 3px solid #1235ff;
+    outline-offset: 4px;
+}
+
+.clock-hero-figure {
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+    padding: 24px 16px 0;
+    text-align: center;
+    background-image: url("../images/clock/blob-blue.svg");
+    background-size: 100% 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.clock-hero-figure img {
+    display: block;
+    width: 100%;
+    max-width: 580px;
+    margin: 0 auto;
+}
+
+.clock-main figcaption {
+    display: inline-block;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 12px 0 0;
+    padding: 8px 16px;
+    border-radius: 12px;
+    background-color: #111111;
+    color: #fff5e7;
+    font-family: "Courier New", monospace;
+    font-size: 13px;
+    font-weight: bold;
+    transform: rotate(-2deg);
+}
+
+/*
+ChatGPT-assisted torn-paper backgrounds.
+Request summary: carry the torn-paper design into the interests page.
+Applied solution: shared/paper-black.svg provides this section's edge and texture;
+clock/paper-blue.svg provides the blue project background below.
+Both SVG backgrounds stretch to fill their sections without repeating.
+*/
+.clock-sports {
+    padding: 48px 64px;
+    background-image: url("../images/shared/paper-black.svg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    color: #fff5e7;
+}
+
+.clock-sport {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 28px 0;
+}
+
+.clock-sport-photo {
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.clock-sport-photo img {
+    display: block;
+    width: 100%;
+    height: 280px;
+    box-sizing: border-box;
+    object-fit: cover;
+    border: 8px solid #fff5e7;
+    border-radius: 20px;
+}
+
+#football .clock-sport-photo img {
+    height: auto;
+}
+
+.clock-sports figcaption {
+    background-color: #fff5e7;
+    color: #111111;
+}
+
+.clock-sport-copy,
+.clock-project-copy {
+    flex: 1;
+    min-width: 0;
+}
+
+.clock-section-number {
+    display: inline-block;
+    margin: 0 0 14px;
+    padding: 6px 12px;
+    background-color: #ff6b08;
+    color: #111111;
+    font-family: "Courier New", monospace;
+    font-weight: bold;
+}
+
+.clock-sport h2,
+.clock-project h2 {
+    margin: 0 0 22px;
+    font-family: Impact, "Arial Narrow", sans-serif;
+    font-size: 54px;
+    font-style: italic;
+    line-height: 1.05;
+}
+
+.clock-sport h2 span {
+    padding: 0 8px;
+    background-color: #dfff00;
+    color: #111111;
+}
+
+.clock-copy-text {
+    max-width: 580px;
+    font-family: "Courier New", monospace;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.clock-project {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    padding: 64px;
+    background-image: url("../images/clock/paper-blue.svg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    color: #fff5e7;
+}
+
+.clock-project-cover {
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+    padding-bottom: 12px;
+    border: 8px solid #fff5e7;
+    border-radius: 16px;
+    background-color: #fff5e7;
+    text-align: center;
+}
+
+.clock-project-banner {
+    padding: 20px 12px;
+    background-color: #ed2416;
+    color: #111111;
+}
+
+.clock-project-banner p {
+    margin: 0 0 8px;
+    font-family: Georgia, serif;
+    font-size: 28px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.clock-project-banner span {
+    font-family: Georgia, serif;
+    font-size: 16px;
+    font-style: italic;
+}
+
+.clock-project-cover > img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.clock-project-link {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 16px 22px;
+    border: 2px solid #111111;
+    border-radius: 999px;
+    background-color: #dfff00;
+    font-family: Impact, "Arial Narrow", sans-serif;
+    font-size: 24px;
+    font-style: italic;
+    text-decoration: none;
+}
+
+.clock-project-link:link {
+    color: #111111;
+}
+
+.clock-project-link:visited {
+    color: #542472;
+}
+
+.clock-project-link:hover {
+    background-color: #fff5e7;
+    color: #111111;
+}
+
+.clock-project-link:active {
+    background-color: #ff6b08;
+    color: #111111;
+}
+
+.clock-project-link:focus-visible {
+    outline: 3px solid #fff5e7;
+    outline-offset: 4px;
+}
+
+.clock-project-copy .clock-link-note {
+    margin: 10px 0 0;
+    font-size: 13px;
+}
